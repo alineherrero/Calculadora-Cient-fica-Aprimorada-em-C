@@ -100,7 +100,7 @@ double radiciacao(double radicando, double indice){ //função radiciação
 double raizQuadrada(double valor){ //função raiz quadrada
     if (valor < 0) {
         printf("Erro: Não é possível calcular a raiz quadrada de um número negativo!\n");
-        return NAN; // Retorna Not-a-Number em caso de número negativo
+        return NAN; 
     }
     return sqrt(valor); //retorna o valor da raiz quadrada
 }
@@ -320,14 +320,14 @@ int main(void){
         case 2: {
             int n;
             printf("Digite quantos numeros deseja subtrair:\n");
-            if (scanf("%d", &n) != 1 || n <= 0) { printf("Entrada inválida.\n"); break; } //verifica se a entrada é válida
-            double *array = malloc(sizeof(double) * n); // malloc para alocar memória para o array
+            if (scanf("%d", &n) != 1 || n <= 0) { printf("Entrada inválida.\n"); break; }
+            double *array = malloc(sizeof(double) * n); 
             if (!array) { printf("Memória insuficiente.\n"); break; }
-            leArray(array, n); //chama a função leArray para ler os valores do array
-            double res = subtracao(array, n); //chama a função subtração
-            printf("O resultado da subtracao e: %.2f\n", res); //chama a função subtração
-            adicionarOperacao("Subtracao", array[0], (n>1?array[1]:0), res); //adiciona a operação ao histórico
-            free(array); // serve para liberar a memória alocada para o array
+            leArray(array, n); 
+            double res = subtracao(array, n); 
+            printf("O resultado da subtracao e: %.2f\n", res); 
+            adicionarOperacao("Subtracao", array[0], (n>1?array[1]:0), res); 
+            free(array);
             break;
         }
         case 3: {
@@ -513,7 +513,7 @@ int main(void){
             printf("Digite o valor para calcular o logaritmo na base 10:\n");
             if (scanf("%lf", &valor) != 1) { printf("Entrada inválida.\n"); break; }
             double res = logaritmoBase10(valor);
-            if (!isnan(res)) {
+            if (!isnan(res)) { //verifica se o resultado não é NAN
                 printf("O resultado do logaritmo na base 10 de %.2f e: %.2f\n", valor, res);
                 adicionarOperacao("Logaritmo Base 10", valor, 0, res);
             }
@@ -664,11 +664,11 @@ int main(void){
             double **resultado = malloc(linhasA * sizeof(double*));
             if (!matrizA || !matrizB || !resultado) { printf("Memória insuficiente.\n"); break; }
             for (int i = 0; i < linhasA; i++) {
-                matrizA[i] = malloc(colunasA * sizeof(double));
+                matrizA[i] = malloc(colunasA * sizeof(double)); // aloca memória para cada linha da matriz A
                 resultado[i] = malloc(colunasB * sizeof(double));
-                if (!matrizA[i] || !resultado[i]) { printf("Memória insuficiente.\n"); break; }
+                if (!matrizA[i] || !resultado[i]) { printf("Memória insuficiente.\n"); break; } //verifica se a alocação de memória foi bem sucedida
             }
-            for (int i = 0; i < linhasB; i++) {
+            for (int i = 0; i < linhasB; i++) { 
                 matrizB[i] = malloc(colunasB * sizeof(double));
                 if (!matrizB[i]) { printf("Memória insuficiente.\n"); break; }
             }
