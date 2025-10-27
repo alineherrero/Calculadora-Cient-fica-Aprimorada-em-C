@@ -63,4 +63,39 @@ Para compilar o código (salvo como, por exemplo, `cientifica.c`), use a flag **
 ```bash
 gcc cientifica.c -o calculadora -lm
 ./calculadora
-Adiciona a documentação README v2.0
+---
+
+## 👥 Colaboradores
+
+Este projeto foi desenvolvido com a colaboração dos seguintes membros:
+
+| Colaborador | Contribuição Principal |
+| :--- | :--- |
+| **Aline Herrero** | Desenvolvimento Completo do Sistema e Lógica Central |
+| **Luis Angelo** | Desenvolvimento Completo do Sistema e Funções Matemáticas |
+| **Jamilly Duda** | Estrutura de Código, Revisão e Documentação do `README.md` |
+| **Syang** | Testes e Implementação de Estruturas de Dados |
+
+---
+
+## 💻 Exemplo de Uso (Terminal)
+
+Este é um exemplo da interação do usuário com a calculadora para uma operação de Potenciação e a visualização do histórico subsequente:
+
+```bash
+----CALCULADORA CIENTÍFICA----
+1 - Adição
+...
+5 - Potenciação
+...
+27 - Matriz Multiplicação
+Escolha a opção desejada: 5
+Digite a base:
+5
+Digite o expoente:
+3
+O resultado da potenciacao e: 125.00
+
+Histórico de Operações:
+ID: 1 | Tipo: Potenciacao | a1: 5.00 | a2: 3.00 | Resultado: 125.00
+
